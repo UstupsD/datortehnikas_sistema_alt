@@ -62,4 +62,15 @@ public class Tech implements Serializable {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    @Override
+    public String toString() {
+        return "Tech{" +
+                "id=" + id + '\n' +
+                ", techName=" + techName + '\n' +
+                ", description=" + description + '\n' +
+                ", availability=" + availability + '\n' +
+                ", imageUrl=" + imageUrl + '\n' +
+                '}';
+    }
 }
