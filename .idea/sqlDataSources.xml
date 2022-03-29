@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="a6c88145-1961-4642-9467-7c717159b665" name="datortehnikas_sistema.db Mapping">
+      <data-sources db="ddf943bc-34ef-4656-8306-d3832304a0ea" ddl="7606d28d-546a-47ee-a896-76a9af1c7ed5" />
+      <scope>
+        <node kind="database" negative="1">
+          <node kind="schema" negative="1" />
+        </node>
+      </scope>
+    </mapping>
+    <mapping uuid="82c4b842-ea6c-426e-b08b-d48c2a82bbe0" name="MySQL - datortehnikassistema@localhost Mapping">
+      <data-sources db="ddf943bc-34ef-4656-8306-d3832304a0ea" ddl="7606d28d-546a-47ee-a896-76a9af1c7ed5" />
+      <scope>
+        <node kind="database" negative="1">
+          <node kind="schema" negative="1" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="7606d28d-546a-47ee-a896-76a9af1c7ed5" />
+          <option name="name" value="MySQL - datortehnikas_sistema@localhost (DDL)" />
+          <option name="languageId" value="MySQL" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$" />
+            </array>
+          </option>
+        </State>
+      </list>
+    </option>
+  </component>
+</project>
