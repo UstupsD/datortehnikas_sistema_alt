@@ -1,3 +1,4 @@
+// This is a model for handling employees, so that they may be put in a database.
 package com.datortehnika.datortehnikas_sistema.model;
 
 import javax.persistence.*;
@@ -15,14 +16,14 @@ public class Employee implements Serializable {
     private boolean isSysAdmin;
 
     public Employee() {}
-
+    // Below is the structure for an entry in the employee database table.
     public Employee(String firstName, String lastName, String jobTitle, boolean isSysAdmin) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.jobTitle = jobTitle;
         this.isSysAdmin = isSysAdmin;
     }
-
+    // All of these below are to put the correct values in the database.
     public Long getId() {
         return id;
     }
@@ -53,7 +54,7 @@ public class Employee implements Serializable {
     public void setIsSysAdmin(boolean isSysAdmin) {
         this.isSysAdmin = isSysAdmin;
     }
-
+    // This is used to view a database entry much easier.
     @Override
     public String toString(){
         return "Employee{" +

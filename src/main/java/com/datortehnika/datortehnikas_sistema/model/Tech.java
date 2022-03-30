@@ -1,3 +1,4 @@
+// This is a model for handling tech, so that they may be put in a database.
 package com.datortehnika.datortehnikas_sistema.model;
 
 import javax.persistence.*;
@@ -15,14 +16,14 @@ public class Tech implements Serializable {
     private String imageUrl;
 
     public Tech() {}
-
+    // Below is the structure for an entry in the tech database table.
     public Tech(String techName, String description, boolean availability, String imageUrl) {
         this.techName = techName;
         this.description = description;
         this.availability = availability;
         this.imageUrl = imageUrl;
     }
-
+    // All of these below are to put the correct values in the database.
     public Long getId() {
         return id;
     }
@@ -62,7 +63,7 @@ public class Tech implements Serializable {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-
+    // This is used to view a database entry much easier.
     @Override
     public String toString() {
         return "Tech{" +
