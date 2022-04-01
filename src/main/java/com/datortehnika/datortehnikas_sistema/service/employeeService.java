@@ -12,7 +12,7 @@ public class employeeService {
     private final employeeRepo employeeRepo;
     // These are all the functions for working with the employee entries in the database.
     @Autowired
-    public employeeService(com.datortehnika.datortehnikas_sistema.repository.employeeRepo employeeRepo) {
+    public employeeService(employeeRepo employeeRepo) {
         this.employeeRepo = employeeRepo;
     }
 

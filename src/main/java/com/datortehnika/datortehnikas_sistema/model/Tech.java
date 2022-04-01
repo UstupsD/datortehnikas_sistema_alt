@@ -5,15 +5,20 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "tech")
 public class Tech implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, updatable = true)
+    @Column(name = "id", nullable = false, updatable = true)
     private Long id;
     private String techName;
     private String description;
     private boolean availability;
     private String imageUrl;
+    // The three lines below are responsible for adding a foreign key to the Request table entries.
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "tech_id", referencedColumnName = "id")
+    private Request request;
 
     public Tech() {}
     // Below is the structure for an entry in the tech database table.

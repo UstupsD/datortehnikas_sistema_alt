@@ -5,19 +5,28 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "employees")
 public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, updatable = true)
+    @Column(name = "id", nullable = false, updatable = true)
     private Long id;
+    private String email;
+    private String password; //TODO: Encrypt password
     private String firstName;
     private String lastName;
     private String jobTitle;
     private boolean isSysAdmin;
+    // The three lines below are responsible for adding a foreign key to the Request table entries.
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    private Request request;
 
     public Employee() {}
     // Below is the structure for an entry in the employee database table.
-    public Employee(String firstName, String lastName, String jobTitle, boolean isSysAdmin) {
+    public Employee(String email, String password, String firstName, String lastName, String jobTitle, boolean isSysAdmin) {
+        this.email = email;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.jobTitle = jobTitle;
@@ -29,6 +38,18 @@ public class Employee implements Serializable {
     }
     public void setId(Long id) {
         this.id = id;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
     public String getFirstName() {
         return firstName;
@@ -59,6 +80,8 @@ public class Employee implements Serializable {
     public String toString(){
         return "Employee{" +
                 "id=" + id + '\n' +
+                ", email=" + email + '\n' +
+                ", password=" + password + '\n' +
                 ", firstName=" + firstName + '\n' +
                 ", lastName=" + lastName + '\n' +
                 ", jobTitle=" + jobTitle + '\n' +

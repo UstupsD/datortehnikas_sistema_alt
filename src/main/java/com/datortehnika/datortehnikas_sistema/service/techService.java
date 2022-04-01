@@ -1,6 +1,6 @@
 package com.datortehnika.datortehnikas_sistema.service;
 
-import com.datortehnika.datortehnikas_sistema.exception.TechNotFoundException;
+import com.datortehnika.datortehnikas_sistema.exception.techNotFoundException;
 import com.datortehnika.datortehnikas_sistema.model.Tech;
 import com.datortehnika.datortehnikas_sistema.repository.techRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ public class techService {
     private final techRepo techRepo;
     // These are all the functions for working with the tech entries in the database.
     @Autowired
-    public techService(com.datortehnika.datortehnikas_sistema.repository.techRepo techRepo) {
+    public techService(techRepo techRepo) {
         this.techRepo = techRepo;
     }
 
@@ -30,7 +30,7 @@ public class techService {
     }
 
     public Tech findTechById(Long id){
-        return techRepo.findTechById(id).orElseThrow(() -> new TechNotFoundException("Error: Tech by ID " + id + " was not found!"));
+        return techRepo.findTechById(id).orElseThrow(() -> new techNotFoundException("Error: Tech by ID " + id + " was not found!"));
     }
 
     public void deleteTech(Long id){
