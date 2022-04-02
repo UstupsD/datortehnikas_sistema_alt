@@ -1,4 +1,5 @@
 // This is a model for handling employees, so that they may be put in a database.
+/*
 package com.datortehnika.datortehnikas_sistema.model;
 
 import javax.persistence.*;
@@ -89,3 +90,4 @@ public class Employee implements Serializable {
                 '}';
     }
 }
+ */
