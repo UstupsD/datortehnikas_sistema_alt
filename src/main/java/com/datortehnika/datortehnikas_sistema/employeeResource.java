@@ -1,7 +1,8 @@
 package com.datortehnika.datortehnikas_sistema;
 
 import com.datortehnika.datortehnikas_sistema.model.Employee;
-import com.datortehnika.datortehnikas_sistema.service.employeeService;
+/*
+import com.datortehnika.datortehnikas_sistema.service.userService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,9 +13,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/employee")
 public class employeeResource {
-    private final employeeService employeeService;
+    private final userService employeeService;
 
-    public employeeResource(employeeService employeeService) {
+    public employeeResource(userService employeeService) {
         this.employeeService = employeeService;
     }
 
@@ -48,3 +49,4 @@ public class employeeResource {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
+*/

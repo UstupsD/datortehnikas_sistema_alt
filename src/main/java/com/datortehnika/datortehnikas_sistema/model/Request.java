@@ -1,6 +1,8 @@
 // This is a model for requests, so that they may be put in a database.
 package com.datortehnika.datortehnikas_sistema.model;
 
+import com.datortehnika.datortehnikas_sistema.appUser.AppUser;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -11,10 +13,10 @@ public class Request implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = true)
     private Long id;
-    @Column(name = "employeeId", nullable = false, updatable = true)
-    private Long employeeId;
+    @Column(name = "userId", nullable = false, updatable = true)
+    private Long userId;
     @OneToOne(mappedBy = "request")// This line makes employee_id a foreign key of id from the Employee table.
-    private Employee employee;
+    private AppUser appUser;
     @Column(name = "techId", nullable = false, updatable = true)
     private Long techId;
     @OneToOne(mappedBy = "request")// This line makes tech_id a foreign key of id from the Tech table.
@@ -23,8 +25,8 @@ public class Request implements Serializable {
     private int requestStatus;
 
     public Request() {}
-    public Request(Long employeeId, Long techId, String requestReason) {
-        this.employeeId = employeeId;
+    public Request(Long userId, Long techId, String requestReason) {
+        this.userId = userId;
         this.techId = techId;
         this.requestReason = requestReason;
         this.requestStatus = 0;// 0 - BEING REVIEWED | 1 - APPROVED | 2 - DENIED
@@ -39,11 +41,11 @@ public class Request implements Serializable {
     }
 
     public Long getEmployeeId() {
-        return employeeId;
+        return userId;
     }
 
-    public void setEmployeeId(Long employeeId) {
-        this.employeeId = employeeId;
+    public void setEmployeeId(Long userId) {
+        this.userId = userId;
     }
 
     public Long getTechId() {
@@ -74,7 +76,7 @@ public class Request implements Serializable {
     public String toString(){
         return "Request{" +
                 "id=" + id + '\n' +
-                ", employeeId=" + employeeId + '\n' +
+                ", userId=" + userId + '\n' +
                 ", techId=" + techId + '\n' +
                 ", requestReason=" + requestReason + '\n' +
                 ", requestStatus=" + requestStatus + '\n' +

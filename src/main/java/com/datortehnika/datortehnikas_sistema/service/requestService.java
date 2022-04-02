@@ -28,7 +28,7 @@ public class requestService {
         return requestRepo.save(request);
     }
 
-    public Request findTechById(Long id){
+    public Request findRequestById(Long id){
         return requestRepo.findRequestById(id).orElseThrow(() -> new requestNotFoundException("Error: Request by ID " + id + " was not found!"));
     }
 
