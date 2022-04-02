@@ -16,11 +16,11 @@ public class requestService {
         this.requestRepo = requestRepo;
     }
 
-    public Request addTech(Request request){
+    public Request addRequest(Request request){
         return requestRepo.save(request);
     }
 
-    public List<Request> findAllRequest(){
+    public List<Request> findAllRequests(){
         return requestRepo.findAll();
     }
 

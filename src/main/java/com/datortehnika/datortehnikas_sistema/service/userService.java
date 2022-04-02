@@ -1,14 +1,16 @@
 package com.datortehnika.datortehnikas_sistema.service;
 //TODO: Add comments
 import com.datortehnika.datortehnikas_sistema.appUser.AppUser;
+import com.datortehnika.datortehnikas_sistema.exception.userNotFoundException;
 import com.datortehnika.datortehnikas_sistema.repository.userRepo;
 import lombok.AllArgsConstructor;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -29,5 +31,17 @@ public class userService implements UserDetailsService {
         appUser.setPassword(encodedPassword);
         userRepo.save(appUser);
         return "It works!";
+    }
+    public List<AppUser> findAllUsers(){
+        return userRepo.findAll();
+    }
+    public AppUser updateUser(AppUser appUser) {
+        return userRepo.save(appUser);
+    }
+    public AppUser findUserById(Long id){
+        return userRepo.findUserById(id).orElseThrow(() -> new userNotFoundException("Error: User by ID " + id + " was not found!"));
+    }
+    public void deleteUser(Long id){
+        userRepo.deleteUserById(id);
     }
 }
