@@ -15,7 +15,6 @@ public class DatortehnikasSistemaApplication {
     public static void main(String[] args) {
         SpringApplication.run(DatortehnikasSistemaApplication.class, args);
     }
-
     @Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
@@ -31,5 +30,4 @@ public class DatortehnikasSistemaApplication {
         urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
         return new CorsFilter(urlBasedCorsConfigurationSource);
     }
-
 }

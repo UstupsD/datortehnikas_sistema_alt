@@ -1,8 +1,6 @@
 // This is a model for requests, so that they may be put in a database.
 package com.datortehnika.datortehnikas_sistema.model;
 
-import com.datortehnika.datortehnikas_sistema.appUser.AppUser;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -16,7 +14,7 @@ public class Request implements Serializable {
     @Column(name = "userId", nullable = false, updatable = true)
     private Long userId;
     @OneToOne(mappedBy = "request")// This line makes employee_id a foreign key of id from the Employee table.
-    private AppUser appUser;
+    private User user;
     @Column(name = "techId", nullable = false, updatable = true)
     private Long techId;
     @OneToOne(mappedBy = "request")// This line makes tech_id a foreign key of id from the Tech table.

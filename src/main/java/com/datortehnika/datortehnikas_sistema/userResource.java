@@ -1,15 +1,12 @@
 package com.datortehnika.datortehnikas_sistema;
 
-import com.datortehnika.datortehnikas_sistema.appUser.AppUser;
-
+import com.datortehnika.datortehnikas_sistema.model.User;
 import com.datortehnika.datortehnikas_sistema.service.userService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-// This is the rest controller for the users
-// All the below is necessary to have URLs for each of the functions regarding users
 @RestController
 @RequestMapping("/user")
 public class userResource {
@@ -20,20 +17,25 @@ public class userResource {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<AppUser>> getAllUsers () {
-        List<AppUser> users = userService.findAllUsers();
-        return new ResponseEntity<>(users, HttpStatus.OK);
+    public ResponseEntity<List<User>> getAllUser () {
+        List<User> user = userService.findAllUsers();
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
-
     @GetMapping("/find/{id}")
-    public ResponseEntity<AppUser> getUserById (@PathVariable("id") Long id) {
-        AppUser user = userService.findUserById(id);
+    public ResponseEntity<User> getUserById (@PathVariable("id") Long id) {
+        User user = userService.findUserById(id);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
+    @PostMapping("/add")
+    public ResponseEntity<User> addUser(@RequestBody User user) {
+        User newUser = userService.addUser(user);
+        return new ResponseEntity<>(newUser, HttpStatus.CREATED);
+    }
+
     @PutMapping("/update")
-    public ResponseEntity<AppUser> updateUser(@RequestBody AppUser user) {
-        AppUser updateUser = userService.updateUser(user);
+    public ResponseEntity<User> updateUser(@RequestBody User user) {
+        User updateUser = userService.updateUser(user);
         return new ResponseEntity<>(updateUser, HttpStatus.OK);
     }
 
