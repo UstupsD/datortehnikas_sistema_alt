@@ -9,7 +9,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
-//TODO: Add comments
+//CORS configuration, so that Front-End can access back-end.
 @Configuration
 @AllArgsConstructor
 public class webSecurityConfig{

@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 @SpringBootApplication
 public class DatortehnikasSistemaApplication {
-
+// CORS configuration, so that the front-end can access back-end.
     public static void main(String[] args) {
         SpringApplication.run(DatortehnikasSistemaApplication.class, args);
     }

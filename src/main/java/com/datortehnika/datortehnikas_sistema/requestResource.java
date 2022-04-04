@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//ToDo fill this out
+// Various functions for working with requests
 @RestController
 @RequestMapping("/request")
 public class requestResource {
