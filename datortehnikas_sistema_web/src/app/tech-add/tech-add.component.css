@@ -4,6 +4,11 @@
     display: flex;
     justify-content: center;
 }
+.newEntry {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
 table {
     width: 80%;
     margin-left: auto;
@@ -14,4 +19,7 @@ table, th, td {
     border: 1px solid;
     text-align:center
 }
-
+.submit-form {
+    display: flex;
+    justify-content: center;
+}

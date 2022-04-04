@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="tech-add.component.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+     .jumbotron {
+      margin-bottom: 0;
+    }
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+<h1 class="title">DATORTEHNIKAS PIEVIENOŠANA</h1>
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <div class="form-group" hidden>
+      <label for="title">ID</label>
+      <input type="text" class="form-control" id="title" required [([(ngModel)]="tech.id" name="ID"/>)]
+    </div>
+    <div class="form-group">
+      <label for="title">Nosaukums</label>
+      <input type="text" class="form-control" id="title" required [(ngModel)]="tech.techName" name="title" placeholder="Nosaukums"/>
+    </div>
+    <div class="form-group">
+      <label for="description">Apraksts</label>
+      <input type="text" class="form-control" id="description" required [(ngModel)]="tech.description" name="description" placeholder="Apraksts"/>
+    </div>
+    <div class="form-group">
+      <label for="availability">Pieejams</label>
+      <input type="checkbox" class="form-control" id="availability" required [(ngModel)]="tech.availability" name="availability"/>
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">Attēla URL</label>
+      <input type="text" class="form-control" id="imageUrl" required [(ngModel)]="tech.imageUrl" name="imageUrl" placeholder="Attēla URL (128x128)"/>
+    </div>
+    <div class="form-group">
+    </div>
+    <button (click)="saveTech()" class="btn btn-success">Apstiprināt</button>
+  </div>
+  <div *ngIf="submitted">
+    <h4>Datortehnika veiksmīgi pievienota!</h4>
+    <button class="btn btn-success" (click)="newTech()">Pievienot</button>
+  </div>
+</div>
+</body>
+</html>

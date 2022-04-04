@@ -16,6 +16,7 @@ public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String jobTitle;
+    private String employeeCode;
     // The three lines below are responsible for adding a foreign key to the Request table entries.
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
@@ -23,12 +24,13 @@ public class User implements Serializable {
 
     public User() {}
     // Below is the structure for an entry in the employee database table.
-    public User(String email, String firstName, String lastName, String jobTitle) {
+    public User(String email, String firstName, String lastName, String jobTitle, String employeeCode) {
         this.email = email;
         //this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.jobTitle = jobTitle;
+        this.employeeCode = employeeCode;
     }
 
     public Long getId() {
@@ -71,6 +73,14 @@ public class User implements Serializable {
         this.jobTitle = jobTitle;
     }
 
+    public String getEmployeeCode() {
+        return employeeCode;
+    }
+
+    public void setEmployeeCode(String employeeCode) {
+        this.employeeCode = employeeCode;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -79,6 +89,7 @@ public class User implements Serializable {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", jobTitle='" + jobTitle + '\'' +
+                ", employeeCode='" + employeeCode + '\'' +
                 '}';
     }
 }

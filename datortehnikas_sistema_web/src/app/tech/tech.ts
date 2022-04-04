@@ -3,5 +3,5 @@ export interface Tech {
     techName: string,
     description: string,
     availability: boolean,
-    imageUrl: string
+    imageUrl: string,
 }
